@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <!--<meta name="viewport" content="width=device-width,initial-scale=1.0">-->
+        <title>First Innings Score Predictor</title>
+        
+		
+		</head>
+		
+
+    <body style="background-color:#edbd47;">
+
+        <!-- Website Title -->
+    	<center><h1>INDIAN PREMIERE LEAGUE</h1></center>
+
+        <!-- Prediction Area -->
+        <!--<div class="prediction-area">
+
+            <!-- IPL Banner - 1 -->
+            
+		<center>
+
+            <!-- Prediction Form -->
+            <div class='div2' style="backgroud-image:url('mi.jpg');">
+			
+                <form action="{{ url_for('predict') }}" method="POST">
+                    <!-- Batting Team Dropdown -->
+                    <select class="form-input align-center" name="batting-team" required>
+                        <option value="none">--- Select a Batting team ---</option>
+                        <option value="Mumbai Indians">Mumbai Indians</option>
+                        <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                        <option value="Chennai Super Kings">Chennai Super Kings</option>
+                        <option value="Rajasthan Royals">Rajasthan Royals</option>
+                        <option value="Kings XI Punjab">Kings XI Punjab</option>
+                        <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                        <option value="Delhi Daredevils">Delhi Daredevils</option>
+                        <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                    </select><br><br>
+                    <!-- Bowling Team Dropdown -->
+                    <select class="form-input align-center" name="bowling-team" id="bt" required>
+                        <option value="none">--- Select a Bowling team ---</option>
+                        <option value="Mumbai Indians">Mumbai Indians</option>
+                        <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                        <option value="Chennai Super Kings">Chennai Super Kings</option>
+                        <option value="Rajasthan Royals">Rajasthan Royals</option>
+                        <option value="Kings XI Punjab">Kings XI Punjab</option>
+                        <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                        <option value="Delhi Daredevils">Delhi Daredevils</option>
+                        <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                    </select><br><br>
+                    overs:<input class="form-input" type="number" name="overs" placeholder="1-20" min="1" max="20" required="required"><br> <br>
+                    runs:<input class="form-input" type="number" name="runs" placeholder="24-200" min="24" max="200" required="required"><br><br>
+                    wickets:<input class="form-input" type="number" name="wickets" placeholder="1-3" min="1" max="3" required="required"><br><br>
+                    Rem run:<input class="form-input" type="number" name="runs_in_prev_5" placeholder="24-100" min="24" max="100" required="required"><br><br>
+                    Rem wkt:<input class="form-input" type="number" name="wickets_in_prev_5" placeholder="1-4" min="1" max="4" required="required"><br><br>
+
+			<input type="submit" class="myButton" value="Predict Score">
+        	</form>
+			
+            </div>
+			</center>
+
+           
+      
+        </div>
+
+        <!-- Footer -->
+       
+
+    </body>
+</html>
