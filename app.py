@@ -62,15 +62,26 @@ def predict():
         wickets = int(request.form['wickets'])
         runs_in_prev_5 = int(request.form['runs_in_prev_5'])
         wickets_in_prev_5 = int(request.form['wickets_in_prev_5'])
+        if batting_team != bowling_team :
+                temp_array = temp_array + [overs, runs, wickets, runs_in_prev_5, wickets_in_prev_5]
         
-        temp_array = temp_array + [overs, runs, wickets, runs_in_prev_5, wickets_in_prev_5]
+                data = np.array([temp_array])
+                my_prediction = int(regressor.predict(data)[0])
+                lower_limit=str(my_prediction-10)
+                upper_limit=str(my_prediction+5)
+                output=[lower_limit,upper_limit]
+                   
+                return render_template('index.html', prediction_text='The final score predicted range ' + output[1] + ' to ' + output[0] )
+                
         
-        data = np.array([temp_array])
-        my_prediction = int(regressor.predict(data)[0])
-              
-        return render_template('result.html', lower_limit = my_prediction-10, upper_limit = my_prediction+5)
+        else:
+                return render_template('index.html',prediction_text="Give different values for batting team and bowling team")
+
+               
+                        
 
 
 
 if __name__ == '__main__':
 	app.run(debug=True)
+
