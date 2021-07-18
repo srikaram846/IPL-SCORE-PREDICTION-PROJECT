@@ -71,7 +71,7 @@ def predict():
                 upper_limit=str(my_prediction+5)
                 output=[lower_limit,upper_limit]
                    
-                return render_template('index.html', prediction_text='The final score predicted range ' + output[1] + ' to ' + output[0] )
+                return render_template('index.html', prediction_text2='The final score predicted range ' + output[0] + ' to ' + output[1] )
                 
         
         else:
